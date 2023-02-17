@@ -1,0 +1,17 @@
+<li>
+  <div class="ml-6 mb-6 pb-6">
+    <p class="text-gray-500 text-sm mt-2">Criado por <%=post.user.email%> às <%= post.created_at.strftime("%d/%m/%Y") %></p>
+    <p class="text-gray-700 mt-2 mb-4"><%= post.content %></p>
+    <% if current_user.present? %>
+      <div class="inline-block ml-2">
+      <%= button_to "Curtir", like_post_path(post.id),
+                    method: :post,
+                    data: { action: "post#like" },
+                    class: "inline-block px-4 py-1.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
+      </div>
+    <%end%>
+    <button type="button" class="inline-block px-4 py-1.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+      <%= post.likes.count %> Likes
+    </button>
+  </div>
+</li>

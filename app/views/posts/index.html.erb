@@ -1,0 +1,16 @@
+<h1 class="text-2xl font-semibold my-2">Posts</h1>
+
+<% if notice.present? %>
+  <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+    <%= notice %>
+  </p>
+<% end %>
+
+<ol class="border-l-2 border-blue-600">
+  <%= render @posts %>
+</ol>
+
+<div class="mx-auto text-center my-4">
+  <%= will_paginate @posts %>
+</div>
+<br>

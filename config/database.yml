@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: postgres
+  username: root
+  password: root123
+
+development:
+  <<: *default
+  database: lamebook_development
+
+test:
+  <<: *default
+  database: lamebook_test
+
+production:
+  <<: *default
+  database: lamebook_production
+  username: lamebook
+  password: <%= ENV["LAMEBOOK_DATABASE_PASSWORD"] %>

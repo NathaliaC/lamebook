@@ -1,0 +1,17 @@
+<div class="px-6 pt-6 lg:px-8">
+  <nav class="flex items-center justify-between" aria-label="Global">
+    <div class="hidden lg:flex lg:gap-x-12">
+      <%= link_to 'Pagina Inicial', root_path, class: "text-sm font-semibold leading-6 text-gray-900" %>
+      <% if current_user.present? %>
+        <%= link_to 'Novo Post', new_post_path, class: "text-sm font-semibold leading-6 text-gray-900"  %>
+      <%end%>
+    </div>
+    <div>
+      <% if user_signed_in? %>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "text-sm font-semibold leading-6 text-gray-900" %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, class: "text-sm font-semibold leading-6 text-gray-900" %>
+      <% end %>
+    </div>
+  </nav>
+</div>
