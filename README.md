@@ -10,13 +10,13 @@ Para iniciar a aplicação você precisa executar
 ```
 docker-compose up
 ```
-Para executar os testes você pode usar 
+Para executar os testes você pode usar
 ```
 ➜ docker exec -it lamebook_app_1 /bin/bash 
 ➜ bundle exec rspec 
 ```
 
-Na inicialização da aplicação serão criados dois usuários, no qual você pode utilizar na logar na parte visual da aplicação
+Na inicialização da aplicação serão criados dois usuários, no qual você pode utilizar para logar na parte visual da aplicação.
 ```
 email: carnaval@teste.com
 senha: 123456
